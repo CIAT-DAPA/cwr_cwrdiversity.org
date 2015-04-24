@@ -1,0 +1,876 @@
+/*
+Theme Name: Yamidoo Magazine Child
+Version: 1.0
+Author: Hector Tobon - Decision and Policy Analysis (DAPA) - CIAT
+Author URI: http://dapa.ciat.cgiar.org
+Template: yamidoo
+*/
+
+@import url("../yamidoo/style.css");
+
+/******************************************
+ CUSTOM STYLESHEET
+*******************************************/
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.top {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.more-left {
+    margin-right: 65px;
+}
+
+.more-small {
+    font-size: 10px;
+}
+
+#ajax-post-search {
+    width: 230px;
+}
+
+#ajax-post-search #search_form input {
+    width: 215px;
+}
+
+/* This is temporal  -- jplayer? */
+#reproductor {
+    padding: 10px;
+    float: right;
+    margin-left: 280px;
+    width: 50%;
+    height: 25%;
+}
+
+body {
+    /*background: url("images/bg.png") repeat scroll 0 0 transparent;*/
+    background: #E6F4E3;
+    /* background: url("images/GrassBlades_1280.jpg") repeat fixed center bottom transparent;*/
+    /* background: url("http://dl.dropbox.com/u/28296257/temp/luigig-bg2a.jpg") repeat-x fixed left bottom transparent; */
+}
+
+#page-wrap {
+    background: url("images/bg-header.jpg") no-repeat scroll 0 0 white;
+    margin: 30px auto 30px;
+
+    /* SHADOW */
+    -webkit-box-shadow: 2px 7px 29px #5A5E59; /* Safari and Chrome */
+    box-shadow: 2px 7px 29px #5A5E59;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Glow(Color=#5A5E59,Strength=10)";
+}
+
+#content-wrap {
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.widget {
+    width: 260px;
+}
+
+/* --------------SECONDARY MENU ------------*/
+
+#nav {
+    top: -25px;
+    position: relative;
+}
+
+/* ----------------- HEADER ---------------- */
+
+#header {
+    float: left;
+    padding-top: 0px;
+    width: 980px;
+}
+
+#header #logo {
+    float: left;
+    width: 160px;
+    margin-top: 0px;
+    margin-left: 25px;
+}
+
+#header #righthead {
+    display: block;
+    font-family: Georgia;
+    font-size: 34px;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 60px;
+    text-align: center;
+    width: 460px;
+}
+
+#main-wrap {
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+#search {
+    padding-top: 0px;
+    margin-top: 175px;
+    margin-right: 35px;
+}
+
+#searchsubmit {
+    background-color: #35488B;
+    border: 1px solid #000000;
+    color: #FFFFFF;
+    font-size: 10px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+#menu {
+    background-color: transparent;
+    border-bottom: 0px;
+    border-top: 0px;
+    padding: 1px 20px;
+}
+
+/* For Main Menu go to dropdown.css file */
+
+/* ----------------- FEATURE SLIDER ---------------- */
+
+#feature {
+    background: none repeat scroll 0 0 #03325E;
+    width: 880px;
+    margin: 10px 0 50px;
+}
+
+#panes h3 {
+    font-style: oblique;
+    font-weight: normal;
+}
+
+#panes p {
+    font-size: 16px;
+    font-family: Helvetica;
+}
+
+#navi img {
+    width: 75px;
+    height: 46px;
+}
+
+.overlay {
+    background: url("images/bg-slide.gif") repeat scroll 0 0 transparent;
+    bottom: 2px;
+    font-family: georgia;
+    font-style: oblique;
+    font-weight: normal;
+}
+
+/* HIDE the Date, comments and edit links for Featured Slider */
+.meta-feature {
+    display:none;
+}
+
+#panes .more {
+    display:none;
+}
+
+/* ------------------- POST ------------------------ */
+.post {
+    text-align: justify;
+}
+.post p {
+    font-family: verdana;
+}
+
+.post img {
+   max-width: 720px; 
+}
+
+/******************** PAGES ***************************/
+
+/* ----- About Us ----- */
+
+#fullwidth #logos-AboutUs {
+    margin: 50px 30px 30px 30px;
+    float: right;
+}
+#fullwidth #logos-AboutUs img {
+    margin-bottom: 20px;
+}
+#fullwidth #logos-AboutUs a, #fullwidth #logos-AboutUs a:hover  {
+    text-decoration: none;
+    border: none;
+}
+#fullwidth .text-AboutUs {
+    font-family: verdana;
+    /* font-size: 14px; */
+    line-height: 22px;
+}
+
+#fullwidth .text {
+    width: 875px;
+}
+
+/* ------------------- RECENT ARTICLES -----------------------*/
+
+/* Horizontal articles */
+
+#articles h3 p {
+    display: inline;
+}
+
+#articles h3 img {
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+
+#articles .article {
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #E6F4E3;
+    border-right: 2px solid #E6F4E3;
+    margin: 10px 0;
+    padding: 5px 5px 5px 10px;
+}
+
+#articles .article h2 a {
+    color: #154A7F;
+    font-family: Georgia;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+#articles .article p {
+    font-family: verdana;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: justify;
+}
+
+/********************* SIDEBAR **********************/
+
+#sidebar {
+    width: 250px;
+    margin-right: 50px;
+}
+
+#sidebar h3 {
+    background-color: #DCE6F2;
+    border-top: 1px solid #6F99C9;
+    width: 230px;
+}
+
+#sidebar img {
+    height: 90px; /* Antes teniamos 190px*/
+}
+
+#sidebar #wpzoom-flickr-photos img {
+    height: auto;
+}
+
+/* Vertical articles */
+
+#articles .vertical-article {
+    width: 180px;
+    /* display: inline-block; */
+    float: left;
+    height: 390px;
+    vertical-align: top;
+    padding-right: 11px;
+}
+
+#articles .vertical-article img {
+    float: left;
+}
+
+#articles .vertical-article span.comments {
+    float: left;
+}
+
+#articles h3, .widget h3 {
+    background-color: #FFF1F1;
+    border-top: 1px solid #E3B8B8;
+}
+
+#articles .navigation {
+    margin-top: 15px;
+}
+
+#articles .navigation a {
+    background-color: #35488B;
+}
+
+/* ----------------- MAIN FOOTER (GREY) ---------------- */
+#footer {
+    padding: 30px 0px 0px;
+    margin: 20px 0 0;
+    width: 100%;
+    background-color: #F2F2F2;
+}
+
+#footer .footer-widget {
+    float: left;
+    text-align: left;
+    width: 26%;
+    margin-left: 50px;
+    /* background-color: black;*/
+}
+
+#footer #text-4 {
+    margin-left: 90px;
+    width: 18%;
+}
+
+#footer #text-9 {
+    margin-left: 85px;
+    width: 22%;
+}
+
+#footer p {
+    display: inline;
+    font-family: georgia;
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+#footer a {
+    text-decoration: none;
+    border: none;
+}
+
+#footer p.grey {
+    color: #9A9A9A;
+}
+
+#footer #logos {
+    margin-top: 10px;
+}
+
+#footer #logos img {
+    height: 40px;
+}
+
+
+/* contribute */
+#footer #citation #text {
+    color: #9A9A9A;
+    float: right;
+    font-family: Verdana;
+    font-size: 12px;
+    line-height: 17px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 245px;
+}
+
+#footer #contribute img {
+    float: left;
+    height: 30px;
+    position: relative;
+    margin-top: 10px;
+    border: thin inset;
+    padding: 5px;
+}
+
+/* Contact US */
+#footer #contact #text {
+    color: #9A9A9A;
+    font-family: Verdana;
+    font-size: 10px;
+    line-height: 15px;
+    margin-top: 10px;
+}
+
+#footer #contact img {
+    bottom: 65px;
+    float: right;
+    height: 50px;
+    position: relative;
+    right: 20px;
+}
+
+/* ------------ SECONDARY FOOTERS ------------ */
+
+
+/*  
+    Document   : prebreeding_style
+    Created on : Jul 6, 2012, 1:01:46 PM
+    Author     : avillegas
+    Description:
+        Purpose of the stylesheet follows. 
+*/
+
+/* ------------------ PREBREEDING -----------------------*/
+
+.blue {
+    color: #03325E;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.text-temp {
+    font-size: 12px;
+}
+
+#prebreeding {
+    text-align: justify;
+}
+#prebreeding p {
+    font-family: verdana;
+    font-size: 12px;
+}
+
+#prebreeding a {
+    font-size: 14px;
+}
+
+#prebreeding h1{
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;
+    font-weight: bold;
+    color: #13455b;
+    height: 30px;
+}
+
+#prebreeding .post_title{
+    margin-bottom: 5px;
+}
+
+#prebreeding .terms{
+    font-style: italic;
+}
+
+#prebreeding .post_title a {
+    color: #13455b;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: verdana;
+}
+
+#prebreeding span {
+    color: #9C9292;
+    font-size: 14px;
+    text-align: right;
+}
+
+#prebreeding #ajax-post-search {
+    margin-right: 65px;
+    margin-top: 20px;
+}
+
+#prebreeding #ajax-post-search h2 {
+    background-color: #950201;
+    color: #FFFFFF;
+    font-size: 14px;
+    height: 25px;
+    margin-bottom: 14px;
+    padding: 5px;
+}
+
+#prebreeding .post_no_attachement{
+    margin-top: 10px;
+    border-right: 1px solid #EDE9E9;
+    border-bottom: 1px solid #EDE9E9;
+    padding-bottom: 10px;
+    padding-right: 5px;
+    padding-top: 10px;
+}
+
+#prebreeding .clear{
+    clear: both;
+}
+
+#prebreeding .left{
+    float: left;
+}
+
+#prebreeding .right{
+    float: right;
+}
+
+#prebreeding .center {
+    text-align: center;
+}
+
+#prebreeding .feature_image{
+    margin-right: 15px;
+    margin-left: 10px;
+    width: 100px;
+}
+
+#prebreeding .post_resum_content{
+    margin-left: 10px;
+    width: 435px;
+}
+
+#prebreeding .resources_box{
+    display: inline-block;
+}
+
+#prebreeding .resources_content{
+    margin-left: 15px;
+    margin-bottom: 25px;
+    width: 185px;
+}
+
+#prebreeding .res_title{
+    margin-bottom: 3px;
+}
+
+#prebreeding .res_title a{
+    color: #000000;
+    font-weight: bold;
+}
+
+#prebreeding .data-no-found {
+    color: #950201; 
+    font-weight: bold;
+}
+
+/*  ---------------- FOCAL CROPS - MENU --------------- */
+
+#prebreeding #focal_crops {
+    width: 230px;
+    float: left;
+    padding: 5px;
+    margin-top: 2px;
+    text-decoration: none;
+}
+
+#prebreeding #focal_crops ul{
+    list-style: none;
+}
+
+#prebreeding #focal_crops li{
+    padding-left: 28px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    background: url(images/body_menu.png);
+    background-repeat: no-repeat;
+}
+
+#prebreeding #focal_crops .selected{
+    background: url(images/sel_menu.png);
+    background-repeat: no-repeat;
+    padding-top: 6px;
+    padding-bottom: 8px;
+}
+
+#prebreeding #focal_crops .menu_top{
+    background: url(images/top_menu.png);
+    background-repeat: no-repeat;
+    padding-top: 25px;
+}
+
+#prebreeding #focal_crops .menu_bot{
+    background: url(images/botom_menu.png);
+    background-repeat: no-repeat;
+    padding-top: 30px;
+}
+
+#prebreeding #focal_crops a{
+    color: #000000;
+    font-size: 15px;
+}
+
+#prebreeding #focal_crops a:hover{
+    color: #61A260;
+}
+
+#prebreeding #focal_crops #foc-title{
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 30px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-image: url(images/menu_bar.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+/* ------------------ ARTICLES ----------------- */
+
+#prebreeding #articles{
+    float: left;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 600px;
+}
+
+#prebreeding #articles #art-title{
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px;
+    margin-bottom: 14px;
+    height: 25px;
+    background-color: #0A246A;
+    cursor: pointer;
+}
+
+#prebreeding #articles #art-title img {
+    cursor: pointer;
+}
+
+#prebreeding #articles #art-content {
+
+}
+
+#prebreeding #articles #num_comments{
+    width: 20px;
+    height: 20px;
+    float: right;
+    margin-right: 5px;
+    margin-left: 10px;
+    background-image: url(images/comments.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+#prebreeding #older_post{
+    float: right;
+    margin-top: 10px;
+}
+ 
+#prebreeding #older_post a{
+    color: #0A246A;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* ---------------- RESOURCES ------------------- */
+.background-gradient-resources  {
+background-image: linear-gradient(left top, rgb(250,250,250) 2%, rgb(240,195,192) 27%, rgb(235,159,159) 77%, rgb(230,92,92) 100%, rgb(245,12,12) 100%);
+background-image: -o-linear-gradient(left top, rgb(250,250,250) 2%, rgb(240,195,192) 27%, rgb(235,159,159) 77%, rgb(230,92,92) 100%, rgb(245,12,12) 100%);
+background-image: -moz-linear-gradient(left top, rgb(250,250,250) 2%, rgb(240,195,192) 27%, rgb(235,159,159) 77%, rgb(230,92,92) 100%, rgb(245,12,12) 100%);
+background-image: -webkit-linear-gradient(left top, rgb(250,250,250) 2%, rgb(240,195,192) 27%, rgb(235,159,159) 77%, rgb(230,92,92) 100%, rgb(245,12,12) 100%);
+background-image: -ms-linear-gradient(left top, rgb(250,250,250) 2%, rgb(240,195,192) 27%, rgb(235,159,159) 77%, rgb(230,92,92) 100%, rgb(245,12,12) 100%);
+
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	right bottom,
+	color-stop(0.02, rgb(250,250,250)),
+	color-stop(0.27, rgb(240,195,192)),
+	color-stop(0.77, rgb(235,159,159)),
+	color-stop(1, rgb(230,92,92)),
+	color-stop(1, rgb(245,12,12))
+);
+}   
+
+.background-gradient-articles {
+background-image: linear-gradient(left top, rgb(255,255,255) 29%, rgb(242,245,250) 62%, rgb(228,230,235) 78%);
+background-image: -o-linear-gradient(left top, rgb(255,255,255) 29%, rgb(242,245,250) 62%, rgb(228,230,235) 78%);
+background-image: -moz-linear-gradient(left top, rgb(255,255,255) 29%, rgb(242,245,250) 62%, rgb(228,230,235) 78%);
+background-image: -webkit-linear-gradient(left top, rgb(255,255,255) 29%, rgb(242,245,250) 62%, rgb(228,230,235) 78%);
+background-image: -ms-linear-gradient(left top, rgb(255,255,255) 29%, rgb(242,245,250) 62%, rgb(228,230,235) 78%);
+
+background-image: -webkit-gradient(
+	linear,
+	left top,
+	right bottom,
+	color-stop(0.29, rgb(255,255,255)),
+	color-stop(0.62, rgb(242,245,250)),
+	color-stop(0.78, rgb(228,230,235))
+);
+}
+
+#prebreeding #search_result li {
+    margin-bottom: 2px;
+}
+
+#prebreeding #search_result a {
+    color: #03325E;
+    font-weight: 700;
+}
+
+#prebreeding #resources {
+    float: right;
+    width: 25%;
+    margin-right: 50px;
+    margin-top: 2px;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#prebreeding #resources a {
+    color: #03325E;
+    text-decoration: underline;
+}
+
+#prebreeding #resources #res-title {
+    color: #FFFFFF;
+    font-size: 14px;
+    padding: 5px;
+    margin-bottom: 14px;
+    height: 25px;
+    background-color: #950201;
+}
+
+#prebreeding #resources #res-title img {
+    cursor: pointer;
+}
+
+/* ---------------------- CWRUSE SECTION DESCRIPTION ---------------------------- */
+
+#prebreeding #cwruse-desc {
+    float: left;
+    padding: 5px;
+    margin-left: 5px;
+    margin-top: 20px;
+    width: 600px;
+    background-color: #F3F6FA;
+}
+
+#prebreeding #cwruse-desc #cwruse-desc-title {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px;
+    margin-bottom: 5px;
+    height: 25px;
+    background-color: #D2DBE6;
+}
+ 
+#prebreeding #cwruse-desc #cwruse-desc-container {
+    width: 440px;
+}
+
+#prebreeding #cwruse-desc img {
+    width: 120px;
+    height: 60px;
+}
+
+/*  
+    Document   : Expert-evaluation_style
+    Created on : March 3, 2013
+    Author     : avillegas
+    Description:
+        Purpose of the stylesheet follows. 
+*/
+
+#Expert-evaluation #download-box {
+    background-color: #61A260;
+    text-align: right;
+    right: 20px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    width: 150px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#Expert-evaluation #download-box a {
+    text-decoration: none;
+    border: none;
+    color: #FFFFFF;
+}
+
+#Expert-evaluation #download-box img {
+    width: 15px;
+    height: 15px;
+}
+
+#Expert-evaluation img.img-footer {
+    margin-left: 70px;
+    height: 85px;
+}
+
+#Expert-evaluation img.main {
+    height: 110px;
+}
+
+#Expert-evaluation img.small {
+    width: 150px;
+}
+
+#Expert-evaluation td.s2 {
+    text-align: left;
+}
+
+#Expert-evaluation div {
+    margin-bottom: 10px;
+}
+
+#Expert-evaluation p {
+    text-align: justify;
+    margin-right: 30px;
+}
+
+#Expert-evaluation #title {
+    font-family: "Verdana";
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #950201;
+}
+
+#Expert-evaluation #search-area #form-genepool {
+    line-height: 17px;
+    border: 1px solid #0B7802;
+}
+
+#Expert-evaluation #search-area {
+    padding: 30px 170px 0px 170px;
+    margin: 0px 10px 10px 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#Expert-evaluation #search-area select {
+    width: 300px;
+}
+
+#Expert-evaluation #search-area p {
+    text-transform: capitalize;
+}
+
+#Expert-evaluation #Tables table {
+    width: 95%;
+    border: 1px solid #0B7802;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+
+#Expert-evaluation .Key {
+    margin-right: 20px;
+    background-color: #E6F4E2;
+    padding: 10px;
+    font-size: 10px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#Expert-evaluation .column {
+    vertical-align: top;
+    width: 187px;
+    float: left;
+    height: 80px;
+}
+
+#Expert-evaluation #table_header {
+    background-color: #0B7802;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#Expert-evaluation table tr:hover {
+    background-color: #0B7802;
+    color: #FFFFFF;
+}

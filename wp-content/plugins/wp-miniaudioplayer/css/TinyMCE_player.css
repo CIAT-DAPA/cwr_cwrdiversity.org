@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/*******************************************************************************
+ * 
+ * jQuery.mb.components: TinyMCE_player
+ * version: 1.0
+ * Author: pupunzi
+ * Creation date: 16/11/13
+ * Licences: MIT, GPL
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ ******************************************************************************/
+
+.mb_map{
+  display: inline-block;
+  padding: 5px;
+  background: #222222;
+  border-radius: 5px;
+  text-decoration: none;
+  color:#fff;
+  font-weight: bold;
+}
+
+.mb_map:before{
+  content: "▶ ";
+}

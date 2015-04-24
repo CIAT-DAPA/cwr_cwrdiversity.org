@@ -1,0 +1,98 @@
+/*
+Author: Hector Tobon - Decision and Policy Analysis (DAPA) - CIAT
+Author URI: http://dapa.ciat.cgiar.org
+Template: yamidoo
+*/
+
+@import url("../yamidoo/css/dropdown.css");
+
+/******************************************
+ CUSTOM DROPDOWN
+*******************************************/
+/* --- MAIN MENU --- */
+.dropdown ul {
+    float: left;
+    position: relative;
+    z-index: 5;
+}
+
+.dropdown ul li {
+    text-transform: none;
+}
+
+.dropdown ul li li {
+    text-transform: none;
+}
+
+.dropdown ul li li, .dropdown ul li:hover, .dropdown ul li.active, .dropdown ul li.current-cat, .dropdown ul li.current_page_item, .dropdown ul li.current-menu-item {
+    background: none repeat scroll 0 0 #0B7802;
+    border-bottom: 0px;
+    text-align: center;
+}
+
+.dropdown ul li ul li:hover, #nav ul li ul li:hover {
+    background-color: #075501;
+}
+
+#menu.dropdown ul li.active a, #menu.dropdown ul li.current-cat a, #menu.dropdown ul li.current_page_item a, #menu li.current-menu-item a {
+    color: #FFFFFF;
+    height: 30px;
+    vertical-align: middle;
+}
+
+#nav ul li {
+    display: inline;
+}
+
+.dropdown ul a {
+    color: #000000;
+    display: block;
+    height: 100%;
+    text-decoration: none;
+}
+
+.dropdown ul li {
+    display: inline-block;
+    float: none;
+    font-weight: normal;
+    padding: 5px 0;
+    width: 145px;
+    height: 30px;
+}
+
+/*HACK for IE7 */
+.dropdown ul li {
+    *display: inline;
+}
+
+.dropdown .menu-item {
+    font-weight: bold;
+    font-size: 13px;
+    font-family: Georgia;
+}
+
+/* Icons */
+.news-icon > a:first-child {
+    /*background-image: url("images/news-icon.png");*/
+    background-position: 30px top;
+    background-repeat: no-repeat;
+}
+
+.checklist-icon > a:first-child {
+    /*background-image: url("images/find-icon.png");*/
+    background-position: 3px top;
+    background-repeat: no-repeat;
+    text-align: right;
+}
+
+.home-icon > a:first-child {
+    /*background-image: url("images/home-icon.png");*/
+    background-position: 20px -2px;
+    background-repeat: no-repeat;
+}
+
+.gaps-icon > a:first-child {
+    /*background-image: url("images/plant-icon.png");*/
+    background-position: 2px top;
+    background-repeat: no-repeat;
+}
