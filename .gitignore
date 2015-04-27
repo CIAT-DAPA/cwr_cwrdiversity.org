@@ -1,7 +1,7 @@
 #Wordpress
 .htaccess
-wp-config.php
-wp-content/uploads/
+#wp-config.php
+#wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/
 wp-content/backup-db/
@@ -23,3 +23,4 @@ sitemap.xml.gz
 /CWR-Checklist/pages/download/*.csv
 /CWR-Checklist/pages/download/genus/*.csv
 /CWR-Checklist/pages/download/country/*.csv
+/CWR-Checklist/pages/download/taxon/*.csv
