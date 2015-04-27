@@ -3,8 +3,8 @@
 /*___________________________________________________________________________________________________________________________________________________
  _ jquery.mb.components                                                                                                                             _
  _                                                                                                                                                  _
- _ file: TinyMCE_player.css                                                                                                                         _
- _ last modified: 04/01/15 22.11                                                                                                                    _
+ _ file: TinyMCE_player_notAll.css                                                                                                                  _
+ _ last modified: 12/03/15 21.26                                                                                                                    _
  _                                                                                                                                                  _
  _ Open Lab s.r.l., Florence - Italy                                                                                                                _
  _                                                                                                                                                  _
@@ -21,7 +21,7 @@
  _ Copyright (c) 2001-2015. Matteo Bicocchi (Pupunzi);                                                                                              _
  ___________________________________________________________________________________________________________________________________________________*/
 
-.mb_map:not(.map_excluded), a[href*='.mp3']:not(.map_excluded){
+.mb_map:not(.map_excluded){
   display: inline-block;
   padding: 5px;
   background: #222222;
@@ -31,6 +31,6 @@
   font-weight: bold;
 }
 
-.mb_map:not(.map_excluded):before, a[href*='.mp3']:not(.map_excluded):before{
+.mb_map:not(.map_excluded):before{
   content: "▶ ";
 }

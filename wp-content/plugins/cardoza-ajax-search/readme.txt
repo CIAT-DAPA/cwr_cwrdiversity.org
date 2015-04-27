@@ -2,7 +2,7 @@
 Contributors: vinoj.cardoza
 Tags: search, ajax, dynamic, cardoza
 Requires at least: 3.0
-Tested up to: 3.5
+Tested up to: 4.1.1
 Stable tag: trunk
 License: GPLv2 or later
 
@@ -34,6 +34,9 @@ Uninstalling is as simple as deactivating the plugin.
 None yet, if you have one post it at http://www.vinojcardoza.com/wp-plugin-ajax-search/
 
 == Change Log ==
+= Version 1.5 =
+* Tested compatibility with Wordpress 4.1.1.
+
 = Version 1.3 =
 * More security added to the input. (Suggested by Marcela)
 
