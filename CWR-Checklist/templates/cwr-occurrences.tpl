@@ -28,7 +28,18 @@
     <div id="cwr-search">
         <div id="rightDiv" >
             <div id="text">
-                <p>I am Steven the boss</p>
+                <p>
+			Here you may download occurrence information on crop wild relatives, gathered from hundreds of 
+			<a href="http://www.cwrdiversity.org/data-sources/" target="_blank">genebanks, herbaria, researchers, and other data providers</a>. 
+			<br />
+			<br />
+			This data can be used to map the known distributions of crop wild relatives. Data is covered under 
+			<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons license Attribution (CC BY 4.0)</a>. 
+			Please follow the license requirements when using the occurrence data.
+			<br />
+			<br />
+			<center><img src="http://www.cwrdiversity.org/wp-content/uploads/2015/04/license_creativecommons_4.0.png" alt="license" /></center>
+		</p>
             </div>
         </div>  
 
