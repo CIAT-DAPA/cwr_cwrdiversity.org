@@ -14,6 +14,10 @@ wp-content/backups/
 sitemap.xml.gz
 .DS_Store
 
+#cache
+/wp-content/themes/yamidoo/scripts/cache/
+/wp-content/plugins/si-captcha-for-wordpress/captcha/cache/
+
 # Config
 /CWR-Checklist/config/config.php
 /CWR-DataUpload/config/config.php
