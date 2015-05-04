@@ -33,6 +33,9 @@
 			<a href="http://www.cwrdiversity.org/data-sources/" target="_blank">genebanks, herbaria, researchers, and other data providers</a>. 
 			<br />
 			<br />
+			A brief description on how the database was assembled, and some of its characteristics is available on this <a href="http://www.slideshare.net/CWRdiversity/global-database-on-crop-wild-relatives" target="_blank">poster</a>
+			<br />
+			<br />
 			This data can be used to map the known distributions of crop wild relatives. Data is covered under 
 			<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons license Attribution (CC BY 4.0)</a>. 
 			Please follow the license requirements when using the occurrence data.

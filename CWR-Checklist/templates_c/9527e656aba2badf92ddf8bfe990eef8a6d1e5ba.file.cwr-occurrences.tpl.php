@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2015-05-04 13:21:29
+<?php /* Smarty version Smarty-3.1.8, created on 2015-05-04 15:48:46
          compiled from "/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/cwr-occurrences.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15076391855477259334221-04334238%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9527e656aba2badf92ddf8bfe990eef8a6d1e5ba' => 
     array (
       0 => '/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/cwr-occurrences.tpl',
-      1 => 1430318956,
+      1 => 1430754530,
       2 => 'file',
     ),
   ),
@@ -15,9 +15,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
-  'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
   'unifunc' => 'content_55477259517595_95539781',
+  'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_55477259517595_95539781')) {function content_55477259517595_95539781($_smarty_tpl) {?><!-- JAVASCRIPTS -->
 <script type="text/javascript" src="<?php echo @SMARTY_JS_URI;?>
@@ -61,6 +61,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <p>
 			Here you may download occurrence information on crop wild relatives, gathered from hundreds of 
 			<a href="http://www.cwrdiversity.org/data-sources/" target="_blank">genebanks, herbaria, researchers, and other data providers</a>. 
+			<br />
+			<br />
+			A brief description on how the database was assembled, and some of its characteristics is available on this <a href="http://www.slideshare.net/CWRdiversity/global-database-on-crop-wild-relatives" target="_blank">poster</a>
 			<br />
 			<br />
 			This data can be used to map the known distributions of crop wild relatives. Data is covered under 
