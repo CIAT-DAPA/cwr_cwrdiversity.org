@@ -346,11 +346,6 @@ if ($wpzoom_seo_enable == 'Enable') {
         <?php wp_enqueue_script('jquery'); ?>
 
 
-	<?php wp_enqueue_script('jssor',get_template_directory_uri().'/js/jssor/jssor.slider.mini.js'); ?>
-	<?php wp_enqueue_script('jssor_setup',get_template_directory_uri().'/js/jssor/jssor.slider.mini.setup.js'); ?>
-	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jssor.css" type="text/css"/>
-
-
         <?php if (is_singular())
             wp_enqueue_script('comment-reply'); ?>
         <?php
@@ -362,7 +357,9 @@ if ($wpzoom_seo_enable == 'Enable') {
         <?php wp_head(); ?>
         <?php wpzoom_js("tabs", "dropdown"); ?>
 
-
+	<?php wp_enqueue_script('jssor',get_template_directory_uri().'/js/jssor/jssor.slider.mini.js'); ?>
+	<?php wp_enqueue_script('jssor_setup',get_template_directory_uri().'/js/jssor/jssor.slider.mini.setup.js'); ?>
+	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/jssor.css" type="text/css"/>
     </head>
 
 
