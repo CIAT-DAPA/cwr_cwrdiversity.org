@@ -1,9 +1,8 @@
 #Wordpress
 .htaccess
-#wp-config.php
 #wp-content/uploads/
 #wp-content/advanced-cache.php
-#wp-content/wp-cache-config.php
+wp-content/wp-cache-config.php
 #sitemap.xml
 #wp-content/upgrade/
 wp-content/blogs.dir/
@@ -25,6 +24,7 @@ wp-content/themes/yamidoo/scripts/cache/
 /CWR-Checklist/config/config.php
 /CWR-DataUpload/config/config.php
 /CWR-DistributionMap/config/config.php
+wp-config.php
 
 #Files csv
 /CWR-Checklist/pages/download/*.csv

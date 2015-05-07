@@ -42,6 +42,9 @@
 			<br />
 			<br />
 			<center><img src="http://www.cwrdiversity.org/wp-content/uploads/2015/04/license_creativecommons_4.0.png" alt="license" /></center>
+			<br />
+			<br />
+			Please note that a revised/improved version of the occurrence database will be available by the end of June 2015.		
 		</p>
             </div>
         </div>  
