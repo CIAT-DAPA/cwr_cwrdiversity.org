@@ -1,6 +1,6 @@
 #Wordpress
+#/wp-config.php
 wp-config.php
-/wp-config.php
 .htaccess
 #wp-content/uploads/
 #wp-content/advanced-cache.php
