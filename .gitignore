@@ -1,4 +1,5 @@
 #Wordpress
+wp-config.php
 .htaccess
 #wp-content/uploads/
 #wp-content/advanced-cache.php
@@ -23,10 +24,6 @@ wp-content/themes/yamidoo/scripts/cache/
 # Config
 /CWR-Checklist/config/config.php
 /CWR-DistributionMap/config/config.php
-
-wp-config.php
-/wp-config.php
-wp-config.*
 
 
 #Files csv
