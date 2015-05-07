@@ -25,6 +25,7 @@ wp-content/themes/yamidoo/scripts/cache/
 /CWR-DataUpload/config/config.php
 /CWR-DistributionMap/config/config.php
 /wp-config.php
+wp-config.php
 
 #Files csv
 /CWR-Checklist/pages/download/*.csv
