@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2015-05-04 15:48:46
+<?php /* Smarty version Smarty-3.1.8, created on 2015-05-07 16:48:09
          compiled from "/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/cwr-occurrences.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15076391855477259334221-04334238%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9527e656aba2badf92ddf8bfe990eef8a6d1e5ba' => 
     array (
       0 => '/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/cwr-occurrences.tpl',
-      1 => 1430754530,
+      1 => 1431016970,
       2 => 'file',
     ),
   ),
@@ -72,6 +72,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<br />
 			<br />
 			<center><img src="http://www.cwrdiversity.org/wp-content/uploads/2015/04/license_creativecommons_4.0.png" alt="license" /></center>
+			<br />
+			<br />
+			Please note that a revised/improved version of the occurrence database will be available by the end of June 2015.		
 		</p>
             </div>
         </div>  
