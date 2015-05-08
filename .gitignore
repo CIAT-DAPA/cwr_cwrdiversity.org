@@ -25,6 +25,7 @@ sitemap.xml.gz
 wp-content/themes/yamidoo/scripts/cache/*
 wp-content/plugins/si-captcha-for-wordpress/captcha/cache/*
 wp-content/themes/yamidoo/scripts/cache/*
+temp/*
 
 # Config
 /CWR-Checklist/config/config.php
