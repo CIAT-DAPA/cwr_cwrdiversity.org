@@ -4,7 +4,7 @@ This project is the website that contains the results of research about gapanaly
 
 ### How do I get set up? ###
 
-* [Installation](https://github.com/CIAT-DAPA/cwr_cwrdiversity.org/wiki/1.1-Installation)
+* [Installation](https://github.com/CIAT-DAPA/cwr_cwrdiversity.org/wiki/1.5-Installation)
 * [Wiki](https://github.com/CIAT-DAPA/cwr_cwrdiversity.org/wiki)
 
 ### Who do I talk to? ###
