@@ -30,6 +30,7 @@ function register_miniAudioPlayerSettings() {
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_custom_skin_name' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_add_gradient' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_active_all' );
+    register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_replaceDefault' );
 }
 
 function miniAudioPlayer_options_page(){ // Output the options page
@@ -279,6 +280,19 @@ function miniAudioPlayer_options_page(){ // Output the options page
         <th scope="row"><?php _e('Apply to any .mp3 file link', 'mbMiniAudioPlayer'); ?>:</th>
         <td>
             <input type="checkbox" name="miniAudioPlayer_active_all" value="true" <?php if (get_option('miniAudioPlayer_active_all') == "true") {
+                echo' checked="checked"';
+            }?>/>
+
+            <p><?php _e('Check to render any link to an .mp3 file as miniAudioPlayer', 'mbMiniAudioPlayer'); ?>.</p>
+            <p><?php _e('If you uncheck this option only the links activated via the miniAudioPlayer window in the post/page editor will be rendered', 'mbMiniAudioPlayer'); ?>.</p>
+        </td>
+        <td></td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Replace the default Wordpress embed media player', 'mbMiniAudioPlayer'); ?>:</th>
+        <td>
+            <input type="checkbox" name="miniAudioPlayer_replaceDefault" value="true" <?php if (get_option('miniAudioPlayer_replaceDefault') == "true") {
                 echo' checked="checked"';
             }?>/>
 

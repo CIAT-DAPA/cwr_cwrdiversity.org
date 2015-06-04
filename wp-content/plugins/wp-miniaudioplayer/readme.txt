@@ -3,8 +3,8 @@
 Contributors: pupunzi
 Tags: audio player, mp3, HTML5 audio, audio, music, podcast, jquery, pupunzi, mb.components
 Requires at least: 3.3
-Tested up to: 4.1
-Stable tag: 1.6.5
+Tested up to: 4.2.2
+Stable tag: 1.6.7
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DSHAHSJJCQ53Y
 
 Transform your mp3 audio files into a nice, small light HTML5 player.
@@ -85,6 +85,12 @@ sudo apt-get-install chromium-codecs-ffmpeg-extra
 After that your player should work fine.
 
 == Changelog ==
+
+= 1.6.7 =
+* Bug fix: if the component was replacing the default WordPress embed player the settings defined in the settings page were not applied.
+
+= 1.6.6 =
+* Feature: Now you can specify if miniAudioPlayer should work also with the default Wordpress short-code. If this option (Replace the default Wordpress embed media player) is checked the player will work also when the audio file is inserted using the "embed media player" option in the "add media" window. It will work also for play-lists as the default Wordpress media player does.
 
 = 1.6.5 =
 * bugfix: The "Apply to any .mp3 file link" option were not correctly applied.
