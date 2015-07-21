@@ -5,11 +5,13 @@ ob_start();
 
 global $options;
 foreach ($options as $value) {
+ if (isset($value['id'])) {
     if (get_settings($value['id']) === FALSE) {
         $$value['id'] = $value['std'];
     } else {
         $$value['id'] = get_settings($value['id']);
     }
+ }
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
