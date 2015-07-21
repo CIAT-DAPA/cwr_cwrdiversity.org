@@ -1,5 +1,5 @@
 <?php 
-global $options; foreach ($options as $value) { if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } }
+global $options; foreach ($options as $value) {if (isset($value['id'])) { if (get_settings( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; } else { $$value['id'] = get_settings( $value['id'] ); } } }
 $dateformat = get_option('date_format');
 $timeformat = get_option('time_format');
 ?>
