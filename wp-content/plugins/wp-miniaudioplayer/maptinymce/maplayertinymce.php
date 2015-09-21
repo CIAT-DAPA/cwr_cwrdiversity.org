@@ -9,6 +9,7 @@ $donate = get_option('miniAudioPlayer_donate');
 
 $exclude_class = get_option('miniAudioPlayer_excluded');
 $showVolumeLevel = get_option('miniAudioPlayer_showVolumeLevel');
+$allowMute = get_option('miniAudioPlayer_allowMute');
 $showTime = get_option('miniAudioPlayer_showTime');
 $showRew = get_option('miniAudioPlayer_showRew');
 $width = get_option('miniAudioPlayer_width');
@@ -153,6 +154,12 @@ if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
             <span class="label"><?php _e('Time control', 'mbMiniAudioPlayer'); ?>: </span>
             <input type="checkbox" name="showTime" value="true"/>
             <span class="help-inline"><?php _e('Check to show the time control', 'mbMiniAudioPlayer'); ?></span>
+        </label>
+
+        <label>
+            <span class="label"><?php _e('Mute control', 'mbMiniAudioPlayer'); ?>: </span>
+            <input type="checkbox" name="allowMute" value="true"/>
+            <span class="help-inline"><?php _e('Check to activate the mute button', 'mbMiniAudioPlayer'); ?></span>
         </label>
 
         <label>
@@ -325,6 +332,7 @@ if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
         if(jQuery.isEmptyObject(metadata)){
             var defaultmeta = {
                 showVolumeLevel:<?php echo empty($showVolumeLevel) ? false : $showVolumeLevel ?>,
+                allowMute:<?php echo $allowMute ? "true" : "false"?>,
                 showTime:<?php echo $showTime ? "true" : "false"?>,
                 showRew:<?php echo $showRew ? "true" : "false"?>,
                 width:"<?php echo $width ?>",
@@ -383,6 +391,7 @@ if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
                 map_params+="loop:"+(jQuery("[name='loop']").is(":checked") ? "true" : "false")+", ";
                 map_params+="showVolumeLevel:"+(jQuery("[name='showVolumeLevel']").is(":checked") ? "true" : "false")+", ";
                 map_params+="showTime:"+(jQuery("[name='showTime']").is(":checked") ? "true" : "false")+", ";
+                map_params+="allowMute:"+(jQuery("[name='allowMute']").is(":checked") ? "true" : "false")+", ";
                 map_params+="showRew:"+(jQuery("[name='showRew']").is(":checked") ? "true" : "false")+", ";
                 map_params+="addGradientOverlay:"+(jQuery("[name='addGradient']").is(":checked") ? "true" : "false")+", ";
                 map_params+="downloadable:"+(jQuery("[name='downloadable']").is(":checked") ? "true" : "false")+", ";

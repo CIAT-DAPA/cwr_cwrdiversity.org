@@ -138,7 +138,7 @@ if (isset($_POST["genus"]) || isset($_POST["country"]) || isset($_POST["taxon"])
     else{
         $parameter=str_replace(array(" "),"_",$_POST['taxon']);
         $filename =  "./taxon/".$parameter . ".csv";
-    }/*
+    }
 
     if(!file_exists($filename) )
     {
@@ -203,7 +203,7 @@ if (isset($_POST["genus"]) || isset($_POST["country"]) || isset($_POST["taxon"])
                 fclose($file);
             }
         }
-    }*/
+    }
 
     header("Content-type: application/csv");
     header("Content-Disposition: attachment; filename=" . $filename . " ");

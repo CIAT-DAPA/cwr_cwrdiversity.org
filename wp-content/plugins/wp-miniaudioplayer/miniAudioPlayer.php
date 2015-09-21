@@ -4,11 +4,11 @@ Plugin Name: mb.miniAudioPlayer
 Plugin URI: http://wordpress.org/extend/plugins/wp-miniaudioplayer/
 Description: Transform your mp3 audio file link into a nice, small light player. ! IMPORTANT - if you customized the skin for the previous version you need to regenerate it from <a href="http://pupunzi.com/mb.components/mb.miniAudioPlayer/demo/skinMaker.html" target="_blank">here</a>.
 Author: Pupunzi (Matteo Bicocchi)
-Version: 1.6.7
+Version: 1.7.3
 Author URI: http://pupunzi.com
 */
 
-define("MINIAUDIOPLAYER_VERSION", "1.6.7");
+define("MINIAUDIOPLAYER_VERSION", "1.7.3");
 register_activation_hook( __FILE__, 'miniAudioPlayer_install' );
 
 function miniAudioPlayer_install() {
@@ -16,13 +16,14 @@ function miniAudioPlayer_install() {
     update_option('miniAudioPlayer_version', MINIAUDIOPLAYER_VERSION);
     add_option('miniAudioPlayer_donate','false');
     add_option('miniAudioPlayer_getMetadata','false');
-    add_option('miniAudioPlayer_width','250');
+    add_option('miniAudioPlayer_width','350');
     add_option('miniAudioPlayer_skin','black');
     add_option('miniAudioPlayer_animate','true');
     add_option('miniAudioPlayer_volume','.5');
     add_option('miniAudioPlayer_autoplay','false');
     add_option('miniAudioPlayer_showVolumeLevel','true');
     add_option('miniAudioPlayer_showTime','true');
+    add_option('miniAudioPlayer_allowMute','true');
     add_option('miniAudioPlayer_showRew','true');
     add_option('miniAudioPlayer_excluded','map_excluded');
     add_option('miniAudioPlayer_download','false');
@@ -30,52 +31,65 @@ function miniAudioPlayer_install() {
     add_option('miniAudioPlayer_customizer','true');
     add_option('miniAudioPlayer_custom_skin_css', "
 
+/* DO NOT REMOVE OR MODIFY */
+/*{'skinName': 'mySkin', 'borderRadius': 5, 'main': 'rgb(255, 217, 102)', 'secondary': 'rgb(68, 68, 68)', 'playerPadding': 0}*/
+/* END - DO NOT REMOVE OR MODIFY */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++
-MAP custom skin: mySkin
+Copyright (c) 2001-2014. Matteo Bicocchi (Pupunzi);
 http://pupunzi.com/mb.components/mb.miniAudioPlayer/demo/skinMaker.html
 
-background: rgba(235, 21, 21, 1)
-icons: rgba(255, 254, 250, 1)
-border: rgba(235, 101, 110, 1)
-borderLeft: rgba(230, 3, 3, 1)
-borderRight: rgba(184, 14, 14, 1)
-mute: rgba(255, 61, 61, 1)
-download: rgba(212, 32, 38, 0.48)
-downloadHover: rgba(255, 3, 3, 1)
+Skin name: mySkin
+borderRadius: 5
+background: rgb(255, 217, 102)
+icons: rgb(68, 68, 68)
+border: rgb(55, 55, 55)
+borderLeft: rgb(255, 230, 153)
+borderRight: rgb(255, 204, 51)
+mute: rgba(68, 68, 68, 0.4)
+download: rgba(255, 217, 102, 0.4)
+downloadHover: rgb(255, 217, 102)
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-/* Older browser (IE8) not supporting rgba() */
-.mbMiniPlayer.mySkin.shadow table{box-shadow:0 0 3px #1c0606;}
-.mbMiniPlayer.mySkin table span{background-color:#eb1515;}
-.mbMiniPlayer.mySkin table span.map_play{border-left:1px solid #e60303;}
-.mbMiniPlayer.mySkin table span.map_volume{border-right:1px solid #b80e0e;}
-.mbMiniPlayer.mySkin table span.map_volume.mute{color: #ff3d3d;}
-.mbMiniPlayer.mySkin .map_download{color: #d42026;}
-.mbMiniPlayer.mySkin .map_download:hover{color: #ff0303;}
-.mbMiniPlayer.mySkin table span{color: #fffefa;}
-.mbMiniPlayer.mySkin table {border: 1px solid #eb656e !important;}
+/* Older browser (IE8) - not supporting rgba() */
+.mbMiniPlayer.mySkin .playerTable span{background-color:#ffd966}
+.mbMiniPlayer.mySkin .playerTable span.map_play{border-left:1px solid #ffd966;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume{border-right:1px solid #ffd966;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume.mute{color: #444444;}
+.mbMiniPlayer.mySkin .map_download{color: #444444;}
+.mbMiniPlayer.mySkin .map_download:hover{color: #444444;}
+.mbMiniPlayer.mySkin .playerTable span{color: #444444;}
+.mbMiniPlayer.mySkin .playerTable {border: 1px solid #444444 !important;}
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-.mbMiniPlayer.mySkin table{background-color:transparent;}
-.mbMiniPlayer.mySkin.shadow table{box-shadow:0 0 3px rgba(28, 6, 6, 0.01);}
-.mbMiniPlayer.mySkin table span{background-color:rgba(235, 21, 21, 1);}
-.mbMiniPlayer.mySkin table span.map_play{border-left:1px solid rgba(230, 3, 3, 1);}
-.mbMiniPlayer.mySkin table span.map_volume{border-right:1px solid rgba(184, 14, 14, 1);}
-.mbMiniPlayer.mySkin table span.map_volume.mute{color: rgba(255, 61, 61, 1);}
-.mbMiniPlayer.mySkin .map_download{color: rgba(212, 32, 38, 0.48);}
-.mbMiniPlayer.mySkin .map_download:hover{color: rgba(255, 3, 3, 1);}
-.mbMiniPlayer.mySkin table span{color: rgba(255, 254, 250, 1);text-shadow: 1px -1px 1px rgba(189, 11, 11, 1)!important;}
-.mbMiniPlayer.mySkin table span{color: rgba(255, 254, 250, 1);}
-.mbMiniPlayer.mySkin table {border: 1px solid rgba(235, 101, 110, 1) !important;}
-.mbMiniPlayer.mySkin table span.map_title{color: #000; text-shadow:none!important}
+.mbMiniPlayer.mySkin .playerTable{background-color:transparent; border-radius:5px !important;}
+.mbMiniPlayer.mySkin .playerTable span{background-color:rgb(255, 217, 102); padding:3px !important; font-size: 20px;}
+.mbMiniPlayer.mySkin .playerTable span.map_time{ font-size: 12px !important; width: 50px !important}
+.mbMiniPlayer.mySkin .playerTable span.map_title{ padding:4px !important}
+.mbMiniPlayer.mySkin .playerTable span.map_play{border-left:1px solid rgb(255, 204, 51); border-radius:0 4px 4px 0 !important;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume{padding-left:6px !important}
+.mbMiniPlayer.mySkin .playerTable span.map_volume{border-right:1px solid rgb(255, 230, 153); border-radius:4px 0 0 4px !important;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume.mute{color: rgba(68, 68, 68, 0.4);}
+.mbMiniPlayer.mySkin .map_download{color: rgba(255, 217, 102, 0.4);}
+.mbMiniPlayer.mySkin .map_download:hover{color: rgb(255, 217, 102);}
+.mbMiniPlayer.mySkin .playerTable span{color: rgb(68, 68, 68);text-shadow: none!important;}
+.mbMiniPlayer.mySkin .playerTable span{color: rgb(68, 68, 68);}
+.mbMiniPlayer.mySkin .playerTable {border: 1px solid rgb(55, 55, 55) !important;}
+.mbMiniPlayer.mySkin .playerTable span.map_title{color: #000; text-shadow:none!important}
+.mbMiniPlayer.mySkin .playerTable .jp-load-bar{background-color:rgba(255, 217, 102, 0.3);}
+.mbMiniPlayer.mySkin .playerTable .jp-play-bar{background-color:#ffd966;}
+.mbMiniPlayer.mySkin .playerTable span.map_volumeLevel a{background-color:rgb(94, 94, 94); height:80%!important }
+.mbMiniPlayer.mySkin .playerTable span.map_volumeLevel a.sel{background-color:#444444;}
+.mbMiniPlayer.mySkin  span.map_download{font-size:50px !important;}
+/* Wordpress playlist select */
+.map_pl_container .pl_item.sel{background-color:#ffd966 !important; color: #444444}
 /*++++++++++++++++++++++++++++++++++++++++++++++++*/
-
 ");
     add_option('miniAudioPlayer_custom_skin_name','mySkin');
     add_option('miniAudioPlayer_add_gradient','');
     add_option('miniAudioPlayer_active_all','true');
     add_option('miniAudioPlayer_replaceDefault','false');
+    add_option('miniAudioPlayer_replaceDefault_show_title','false');
 
 }
 
@@ -88,6 +102,7 @@ $miniAudioPlayer_animate = get_option('miniAudioPlayer_animate');
 $miniAudioPlayer_volume = get_option('miniAudioPlayer_volume');
 $miniAudioPlayer_autoplay = get_option('miniAudioPlayer_autoplay');
 $miniAudioPlayer_showVolumeLevel = get_option('miniAudioPlayer_showVolumeLevel');
+$miniAudioPlayer_allowMute = get_option('miniAudioPlayer_allowMute');
 $miniAudioPlayer_showTime = get_option('miniAudioPlayer_showTime');
 $miniAudioPlayer_showRew = get_option('miniAudioPlayer_showRew');
 $miniAudioPlayer_excluded = get_option('miniAudioPlayer_excluded');
@@ -99,6 +114,7 @@ $miniAudioPlayer_custom_skin_name = get_option('miniAudioPlayer_custom_skin_name
 $miniAudioPlayer_add_gradient = get_option('miniAudioPlayer_add_gradient');
 $miniAudioPlayer_active_all = get_option('miniAudioPlayer_active_all');
 $miniAudioPlayer_replaceDefault = get_option('miniAudioPlayer_replaceDefault');
+$miniAudioPlayer_replaceDefault_show_title = get_option('miniAudioPlayer_replaceDefault_show_title');
 
 //set up defaults if these fields are empty
 if ($miniAudioPlayer_version != MINIAUDIOPLAYER_VERSION) {$miniAudioPlayer_version = MINIAUDIOPLAYER_VERSION;}
@@ -110,6 +126,7 @@ if (empty($miniAudioPlayer_animate)) {$miniAudioPlayer_animate = "false";}
 if (empty($miniAudioPlayer_volume)) {$miniAudioPlayer_volume = ".5";}
 if (empty($miniAudioPlayer_autoplay)) {$miniAudioPlayer_autoplay = "false";}
 if (empty($miniAudioPlayer_showVolumeLevel)) {$miniAudioPlayer_showVolumeLevel = "false";}
+if (empty($miniAudioPlayer_allowMute)) {$miniAudioPlayer_allowMute = "false";}
 if (empty($miniAudioPlayer_showTime)) {$miniAudioPlayer_showTime = "false";}
 if (empty($miniAudioPlayer_showRew)) {$miniAudioPlayer_showRew = "false";}
 if (empty($miniAudioPlayer_excluded)) {$miniAudioPlayer_excluded = "map_excluded";}
@@ -120,49 +137,62 @@ if (empty($miniAudioPlayer_add_gradient)) {$miniAudioPlayer_add_gradient = "true
 if (empty($miniAudioPlayer_custom_skin_name)) {$miniAudioPlayer_custom_skin_name = "mySkin";}
 if (empty($miniAudioPlayer_active_all)) {$miniAudioPlayer_active_all = "true";}
 if (empty($miniAudioPlayer_replaceDefault)) {$miniAudioPlayer_replaceDefault = "false";}
+if (empty($miniAudioPlayer_replaceDefault_show_title)) {$miniAudioPlayer_replaceDefault_show_title = "false";}
 if (empty($miniAudioPlayer_custom_skin_css)) {$miniAudioPlayer_custom_skin_css = "
 
+/* DO NOT REMOVE OR MODIFY */
+/*{'skinName': 'mySkin', 'borderRadius': 5, 'main': 'rgb(255, 217, 102)', 'secondary': 'rgb(68, 68, 68)', 'playerPadding': 0}*/
+/* END - DO NOT REMOVE OR MODIFY */
 /*++++++++++++++++++++++++++++++++++++++++++++++++++
-MAP custom skin: mySkin
+Copyright (c) 2001-2014. Matteo Bicocchi (Pupunzi);
 http://pupunzi.com/mb.components/mb.miniAudioPlayer/demo/skinMaker.html
 
-background: rgba(235, 21, 21, 1)
-icons: rgba(255, 254, 250, 1)
-border: rgba(235, 101, 110, 1)
-borderLeft: rgba(230, 3, 3, 1)
-borderRight: rgba(184, 14, 14, 1)
-mute: rgba(255, 61, 61, 1)
-download: rgba(212, 32, 38, 0.48)
-downloadHover: rgba(255, 3, 3, 1)
+Skin name: mySkin
+borderRadius: 5
+background: rgb(255, 217, 102)
+icons: rgb(68, 68, 68)
+border: rgb(55, 55, 55)
+borderLeft: rgb(255, 230, 153)
+borderRight: rgb(255, 204, 51)
+mute: rgba(68, 68, 68, 0.4)
+download: rgba(255, 217, 102, 0.4)
+downloadHover: rgb(255, 217, 102)
 ++++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-/* Older browser (IE8) not supporting rgba() */
-.mbMiniPlayer.mySkin.shadow table{box-shadow:0 0 3px #1c0606;}
-.mbMiniPlayer.mySkin table span{background-color:#eb1515;}
-.mbMiniPlayer.mySkin table span.map_play{border-left:1px solid #e60303;}
-.mbMiniPlayer.mySkin table span.map_volume{border-right:1px solid #b80e0e;}
-.mbMiniPlayer.mySkin table span.map_volume.mute{color: #ff3d3d;}
-.mbMiniPlayer.mySkin .map_download{color: #d42026;}
-.mbMiniPlayer.mySkin .map_download:hover{color: #ff0303;}
-.mbMiniPlayer.mySkin table span{color: #fffefa;}
-.mbMiniPlayer.mySkin table {border: 1px solid #eb656e !important;}
+/* Older browser (IE8) - not supporting rgba() */
+.mbMiniPlayer.mySkin .playerTable span{background-color:#ffd966}
+.mbMiniPlayer.mySkin .playerTable span.map_play{border-left:1px solid #ffd966;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume{border-right:1px solid #ffd966;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume.mute{color: #444444;}
+.mbMiniPlayer.mySkin .map_download{color: #444444;}
+.mbMiniPlayer.mySkin .map_download:hover{color: #444444;}
+.mbMiniPlayer.mySkin .playerTable span{color: #444444;}
+.mbMiniPlayer.mySkin .playerTable {border: 1px solid #444444 !important;}
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++*/
 
-.mbMiniPlayer.mySkin table{background-color:transparent;}
-.mbMiniPlayer.mySkin.shadow table{box-shadow:0 0 3px rgba(28, 6, 6, 0.01);}
-.mbMiniPlayer.mySkin table span{background-color:rgba(235, 21, 21, 1);}
-.mbMiniPlayer.mySkin table span.map_play{border-left:1px solid rgba(230, 3, 3, 1);}
-.mbMiniPlayer.mySkin table span.map_volume{border-right:1px solid rgba(184, 14, 14, 1);}
-.mbMiniPlayer.mySkin table span.map_volume.mute{color: rgba(255, 61, 61, 1);}
-.mbMiniPlayer.mySkin .map_download{color: rgba(212, 32, 38, 0.48);}
-.mbMiniPlayer.mySkin .map_download:hover{color: rgba(255, 3, 3, 1);}
-.mbMiniPlayer.mySkin table span{color: rgba(255, 254, 250, 1);text-shadow: 1px -1px 1px rgba(189, 11, 11, 1)!important;}
-.mbMiniPlayer.mySkin table span{color: rgba(255, 254, 250, 1);}
-.mbMiniPlayer.mySkin table {border: 1px solid rgba(235, 101, 110, 1) !important;}
-.mbMiniPlayer.mySkin table span.map_title{color: #000; text-shadow:none!important}
+.mbMiniPlayer.mySkin .playerTable{background-color:transparent; border-radius:5px !important;}
+.mbMiniPlayer.mySkin .playerTable span{background-color:rgb(255, 217, 102); padding:3px !important; font-size: 20px;}
+.mbMiniPlayer.mySkin .playerTable span.map_time{ font-size: 12px !important; width: 50px !important}
+.mbMiniPlayer.mySkin .playerTable span.map_title{ padding:4px !important}
+.mbMiniPlayer.mySkin .playerTable span.map_play{border-left:1px solid rgb(255, 204, 51); border-radius:0 4px 4px 0 !important;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume{padding-left:6px !important}
+.mbMiniPlayer.mySkin .playerTable span.map_volume{border-right:1px solid rgb(255, 230, 153); border-radius:4px 0 0 4px !important;}
+.mbMiniPlayer.mySkin .playerTable span.map_volume.mute{color: rgba(68, 68, 68, 0.4);}
+.mbMiniPlayer.mySkin .map_download{color: rgba(255, 217, 102, 0.4);}
+.mbMiniPlayer.mySkin .map_download:hover{color: rgb(255, 217, 102);}
+.mbMiniPlayer.mySkin .playerTable span{color: rgb(68, 68, 68);text-shadow: none!important;}
+.mbMiniPlayer.mySkin .playerTable span{color: rgb(68, 68, 68);}
+.mbMiniPlayer.mySkin .playerTable {border: 1px solid rgb(55, 55, 55) !important;}
+.mbMiniPlayer.mySkin .playerTable span.map_title{color: #000; text-shadow:none!important}
+.mbMiniPlayer.mySkin .playerTable .jp-load-bar{background-color:rgba(255, 217, 102, 0.3);}
+.mbMiniPlayer.mySkin .playerTable .jp-play-bar{background-color:#ffd966;}
+.mbMiniPlayer.mySkin .playerTable span.map_volumeLevel a{background-color:rgb(94, 94, 94); height:80%!important }
+.mbMiniPlayer.mySkin .playerTable span.map_volumeLevel a.sel{background-color:#444444;}
+.mbMiniPlayer.mySkin  span.map_download{font-size:50px !important;}
+/* Wordpress playlist select */
+.map_pl_container .pl_item.sel{background-color:#ffd966 !important; color: #444444}
 /*++++++++++++++++++++++++++++++++++++++++++++++++*/
-
 ";
 
 }
@@ -209,21 +239,23 @@ function miniAudioPlayer_init() {
 
     if ( !is_admin()) {
         wp_enqueue_script('jquery');
-        wp_enqueue_script('mb.miniPlayer', plugins_url( '/js/jQuery.mb.miniAudioPlayer.min.js', __FILE__ ), false, $miniAudioPlayer_version, false);
+        wp_enqueue_script('mb.miniAudioPlayer', plugins_url( '/js/jQuery.mb.miniAudioPlayer.min.js', __FILE__ ), false, $miniAudioPlayer_version, false);
         wp_enqueue_script('map_overwrite_default_me', plugins_url( '/js/map_overwrite_default_me.js', __FILE__ ), false, $miniAudioPlayer_version, false);
-        wp_enqueue_style('miniAudioPlayer', plugins_url( '/css/miniplayer.css', __FILE__ ), false, $miniAudioPlayer_version, 'screen');
+        wp_enqueue_style('mb.miniAudioPlayer.css', plugins_url( '/css/miniplayer.css', __FILE__ ), false, $miniAudioPlayer_version, 'screen');
     }
 }
 add_action('init', 'miniAudioPlayer_init');
 
 function miniAudioPlayer_player_head() {
-    global $miniAudioPlayer_getMetadata, $miniAudioPlayer_width,$miniAudioPlayer_skin, $miniAudioPlayer_animate,$miniAudioPlayer_volume,$miniAudioPlayer_autoplay,$miniAudioPlayer_showVolumeLevel,$miniAudioPlayer_showTime,$miniAudioPlayer_showRew, $miniAudioPlayer_active_all, $miniAudioPlayer_replaceDefault;
+    global $miniAudioPlayer_excluded, $miniAudioPlayer_getMetadata, $miniAudioPlayer_width,$miniAudioPlayer_skin, $miniAudioPlayer_animate, $miniAudioPlayer_volume, $miniAudioPlayer_autoplay, $miniAudioPlayer_showVolumeLevel, $miniAudioPlayer_allowMute, $miniAudioPlayer_showTime, $miniAudioPlayer_showRew, $miniAudioPlayer_active_all, $miniAudioPlayer_replaceDefault, $miniAudioPlayer_replaceDefault_show_title;
 
     echo '
 	<!-- start miniAudioPlayer initializer -->
 	<script type="text/javascript">
 
-	miniAudioPlayer_replaceDefault = '.$miniAudioPlayer_replaceDefault.';
+	var miniAudioPlayer_replaceDefault = '.$miniAudioPlayer_replaceDefault.';
+	var miniAudioPlayer_excluded = "'.$miniAudioPlayer_excluded.'";
+	var miniAudioPlayer_replaceDefault_show_title = '.$miniAudioPlayer_replaceDefault_show_title.';
 
 	var miniAudioPlayer_defaults = {
 				inLine:true,
@@ -233,6 +265,7 @@ function miniAudioPlayer_player_head() {
 				volume:'.$miniAudioPlayer_volume.',
 				autoplay:'.$miniAudioPlayer_autoplay.',
 				showVolumeLevel:'.$miniAudioPlayer_showVolumeLevel.',
+				allowMute: '.$miniAudioPlayer_allowMute.',
 				showTime:'.$miniAudioPlayer_showTime.',
 				id3:'.$miniAudioPlayer_getMetadata.',
 				showRew:'.$miniAudioPlayer_showRew.',
@@ -248,13 +281,14 @@ function miniAudioPlayer_player_head() {
 		};
 
     function initializeMiniAudioPlayer(){
+    	  jQuery(".mejs-container a").addClass(miniAudioPlayer_excluded);
          jQuery("a'. ($miniAudioPlayer_active_all != 'true' ? '.mb_map':'').'[href*=\'.mp3\'] ,a'.($miniAudioPlayer_active_all != 'true' ? '.mb_map':'').'[href*=\'.m4a\']")'.getExcluded().'mb_miniPlayer(miniAudioPlayer_defaults);
     }
 
 	jQuery(function(){
 
         if('.$miniAudioPlayer_replaceDefault.')
-        replaceDefault();
+          replaceDefault();
 
           initializeMiniAudioPlayer();
           jQuery(document).ajaxSuccess(function(event, xhr, settings) {

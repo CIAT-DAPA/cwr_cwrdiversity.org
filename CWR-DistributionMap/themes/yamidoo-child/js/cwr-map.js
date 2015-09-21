@@ -237,7 +237,9 @@ function showTileImages(url,pointToBounds) {
             return [url, '/', zoom, '/x', normalizedCoord.x, '_y', normalizedCoord.y, '.png'].join('');
         },
         tileSize: new google.maps.Size(256, 256),
-        opacity: 0.53
+        //opacity: 0.53
+	opacity: 0.8
+
     });
 
     map.overlayMapTypes.push(imageMapType);
@@ -258,7 +260,8 @@ function showTileImagesByCrop(cropName,mapType) {
             '/', zoom, '/x', coord.x, '_y', coord.y, '.png'].join('');
         },
         tileSize: new google.maps.Size(256, 256),
-        opacity: 0.6
+        //opacity: 0.6
+	opacity: 0.8
     });
     map.overlayMapTypes.push(imageMapType);
 }

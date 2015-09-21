@@ -20,6 +20,7 @@ function register_miniAudioPlayerSettings() {
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_animate' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_volume' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_showVolumeLevel' );
+    register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_allowMute' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_showTime' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_showRew' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_excluded' );
@@ -31,6 +32,7 @@ function register_miniAudioPlayerSettings() {
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_add_gradient' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_active_all' );
     register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_replaceDefault' );
+    register_setting( 'miniAudioPlayer-settings-group', 'miniAudioPlayer_replaceDefault_show_title' );
 }
 
 function miniAudioPlayer_options_page(){ // Output the options page
@@ -284,22 +286,41 @@ function miniAudioPlayer_options_page(){ // Output the options page
             }?>/>
 
             <p><?php _e('Check to render any link to an .mp3 file as miniAudioPlayer', 'mbMiniAudioPlayer'); ?>.</p>
-            <p><?php _e('If you uncheck this option only the links activated via the miniAudioPlayer window in the post/page editor will be rendered', 'mbMiniAudioPlayer'); ?>.</p>
+            <p><i><?php _e('If you uncheck this option only the links activated via the miniAudioPlayer window in the post/page editor will be rendered', 'mbMiniAudioPlayer'); ?>.</i></p>
         </td>
-        <td></td>
     </tr>
 
     <tr valign="top">
         <th scope="row"><?php _e('Replace the default Wordpress embed media player', 'mbMiniAudioPlayer'); ?>:</th>
         <td>
-            <input type="checkbox" name="miniAudioPlayer_replaceDefault" value="true" <?php if (get_option('miniAudioPlayer_replaceDefault') == "true") {
+            <input id="miniAudioPlayer_replaceDefault" type="checkbox" name="miniAudioPlayer_replaceDefault" value="true" <?php if (get_option('miniAudioPlayer_replaceDefault') == "true") {
                 echo' checked="checked"';
             }?>/>
 
-            <p><?php _e('Check to render any link to an .mp3 file as miniAudioPlayer', 'mbMiniAudioPlayer'); ?>.</p>
-            <p><?php _e('If you uncheck this option only the links activated via the miniAudioPlayer window in the post/page editor will be rendered', 'mbMiniAudioPlayer'); ?>.</p>
+            <p><?php _e('Check to replace the default Wordpress audio player with the miniAudioPlayer', 'mbMiniAudioPlayer'); ?>.</p>
+            <p><i><?php _e('If you uncheck this option the miniAudioPlayer will be applied only to the audio file inserted as "link to media file"', 'mbMiniAudioPlayer'); ?>.</i></p>
+            <hr>
+            <input id="miniAudioPlayer_replaceDefault_show_title" type="checkbox" name="miniAudioPlayer_replaceDefault_show_title" value="true" <?php if (get_option('miniAudioPlayer_replaceDefault_show_title') == "true") {
+                echo' checked="checked"';
+            }?>/>
+            <p><?php _e('Check to show the audio filename inside the player', 'mbMiniAudioPlayer'); ?>.</p>
+
+            <script>
+                if(!jQuery("#miniAudioPlayer_replaceDefault").is(":checked"))
+                    jQuery("#miniAudioPlayer_replaceDefault_show_title").attr("disabled","disabled");
+
+                jQuery("#miniAudioPlayer_replaceDefault").on("click",function(){
+                    if(!jQuery("#miniAudioPlayer_replaceDefault").is(":checked")) {
+                        jQuery("#miniAudioPlayer_replaceDefault_show_title").attr("disabled", "disabled");
+                        jQuery("#miniAudioPlayer_replaceDefault_show_title").removeAttr("checked");
+
+                    }else {
+                        jQuery("#miniAudioPlayer_replaceDefault_show_title").removeAttr("disabled");
+                    }
+                })
+            </script>
+
         </td>
-        <td></td>
     </tr>
 
     <tr valign="top">
@@ -606,6 +627,18 @@ function miniAudioPlayer_options_page(){ // Output the options page
             }?>/>
 
             <p><?php _e('Check to show the time info', 'mbMiniAudioPlayer'); ?>.</p>
+        </td>
+    </tr>
+
+    <tr valign="top">
+        <th scope="row"><?php _e('Activate the mute button', 'mbMiniAudioPlayer'); ?>:</th>
+        <td>
+            <input type="checkbox" name="miniAudioPlayer_allowMute"
+                   value="true" <?php if (get_option('miniAudioPlayer_allowMute') == "true") {
+                echo' checked="checked"';
+            }?>/>
+
+            <p><?php _e('Check to activate the mute button', 'mbMiniAudioPlayer'); ?>.</p>
         </td>
     </tr>
 

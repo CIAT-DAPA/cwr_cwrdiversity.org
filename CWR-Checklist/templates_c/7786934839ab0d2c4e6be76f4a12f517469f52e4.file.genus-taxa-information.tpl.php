@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2015-01-07 10:56:22
+<?php /* Smarty version Smarty-3.1.8, created on 2015-06-18 09:46:48
          compiled from "/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/genus-taxa-information.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:126407923754ad10d6f20862-67345706%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7786934839ab0d2c4e6be76f4a12f517469f52e4' => 
     array (
       0 => '/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/genus-taxa-information.tpl',
-      1 => 1373050590,
+      1 => 1429643071,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_54ad10d726c787_24747152',
   'variables' => 
   array (
     'type' => 0,
@@ -26,8 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'taxa_right' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_54ad10d726c787_24747152',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_54ad10d726c787_24747152')) {function content_54ad10d726c787_24747152($_smarty_tpl) {?><!-- JAVASCRIPTS -->
 <script type="text/javascript" src="<?php echo @SMARTY_JS_URI;?>
