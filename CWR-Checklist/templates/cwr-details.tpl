@@ -365,7 +365,7 @@
     </div>
 
     <div class="go-back"> 
-        <a href="{$smarty.const.SMARTY_URL_CHECKLIST}">
+        <a href="javascript:history.back();">
             <img src="{$smarty.const.SMARTY_IMG_URI}/arrow_return.png">
             Back
         </a>
