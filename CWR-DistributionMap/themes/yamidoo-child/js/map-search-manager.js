@@ -540,6 +540,7 @@ jQuery(document).ready(function($) {
                         } else {
                             initializeWithMapType("sattelite");
                         }
+			console.log("Global ");
                         showTileImages(data.url, null);
                         if (mapType == "global_gap_richness") {
                             $("#tituloEscalaColores").html("Number of high priority taxa");
@@ -740,6 +741,7 @@ jQuery(document).ready(function($) {
                                                 initializeWithMapType("sattelite");
                                             }
                                         }
+					console.log("No se 1");
                                         showTileImages(data.url, tile_points);
                                     }
                                 } else if (mapType == "gap_spp") {
@@ -757,6 +759,8 @@ jQuery(document).ready(function($) {
                                                 initializeWithMapType("sattelite");
                                             }
                                         }
+					console.log("No se 2");
+
                                         showTileImages(data.url, tile_points);
                                     }
                                 }
@@ -901,6 +905,7 @@ jQuery(document).ready(function($) {
                     if (last_search_value != null && last_search_value != $("#search-value").val()) {
                         $(".typeMap > img").hide("slow");
                     }
+			console.log("Seleccion " +$("#search-value").val());
 
                     $.ajax({
                         url: rootURI + "show-information.php?genepool=" + $("#search-value").val() + "&map_type=" + mapType,
@@ -937,6 +942,8 @@ jQuery(document).ready(function($) {
                                     } else {
                                         initializeWithMapType("sattelite");
                                     }
+				console.log("No se 3");
+
                                     showTileImages(data.url, null);
                                     if (mapType == "genepool_gap_richness") {
                                         $("#tituloEscalaColores").html("Number of high priority taxa");
@@ -1338,6 +1345,8 @@ jQuery(document).ready(function($) {
                             $.each(data.pointList, function(index, item) {
                                 tile_points.push([item.latitude, item.longitude]);
                             });
+			console.log("No se 4");
+
                             showTileImages(data.url, tile_points);
                         // No se muestran las escalas de los tiles cuando se hace de manera individual por specie
                         }
@@ -1542,6 +1551,8 @@ jQuery(document).ready(function($) {
                             $.each(data.pointList, function(index, item) {
                                 tile_points.push([item.latitude, item.longitude]);
                             });
+				console.log("No se 5");
+
                             showTileImages(data.url, tile_points);
                         }
                     },

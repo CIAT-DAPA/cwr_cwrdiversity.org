@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2015-06-04 12:57:18
+<?php /* Smarty version Smarty-3.1.8, created on 2015-09-22 15:05:42
          compiled from "/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/genepool-details.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:37154940854904f3e196463-36022099%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '97f02f48c24318772b81c64cac81a33d9ee00d1a' => 
     array (
       0 => '/home/cwr-user/cwrdiversity.org/CWR-Checklist/templates/genepool-details.tpl',
-      1 => 1433422621,
+      1 => 1442933210,
       2 => 'file',
     ),
   ),
@@ -360,8 +360,7 @@ $_smarty_tpl->tpl_vars['herbarium']->_loop = true;
         </div>
 
         <div class="go-back"> 
-            <a href="<?php echo @SMARTY_URL_CHECKLIST;?>
-">
+            <a href="javascript:history.back();">
                 <img src="<?php echo @SMARTY_IMG_URI;?>
 /arrow_return.png">
                 Back

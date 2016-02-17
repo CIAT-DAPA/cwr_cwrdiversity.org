@@ -221,7 +221,6 @@ function showKmlFile(url) {
 
 /* Show the tile map from url, pointToBounds is necessary to autocenter and zoom the map, it has distribution points as array with lat - lon coordinates */
 function showTileImages(url,pointToBounds) {
-    
     if(pointToBounds != null){
         for(var i=0;i<pointToBounds.length;i++){ // Points es una variable que contiene todos los puntos coordenados tipo (latitud, longitud) para la especie / gene pool suministrada
             bounds.extend(new google.maps.LatLng(pointToBounds[i][0],pointToBounds[i][1])); // Extendiendo bounds para todos los marcadores
